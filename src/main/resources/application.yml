@@ -1,0 +1,31 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /
+  max-http-header-size: 65536 
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://XXX.cxrkmjmgkjcq.ap-northeast-2.rds.amazonaws.com:5432/
+    username: postgres
+    password: xxx
+    initial-size: 1
+    max-active: 20
+    min-idle: 1
+    max-idle: 20
+    max-wait: 30000
+    test-on-borrow: false
+    test-on-return: false
+    test-while-idle: true
+    time-between-eviction-runs-millis: 30000
+    validation-query: 'SELECT 1'
+    validation-query-timeout: 3
+    validation-interval: 30000
+mybatis:
+  config-location: classpath:config/mybatis-config.xml
+  configuration:
+    lazyLoadingEnabled: true
+    aggressiveLazyLoading: false
+    mapUnderscoreToCamelCase: true
+  type-aliases-package: com.example.mybatis.repository
+
